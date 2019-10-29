@@ -17,12 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //getting buttons from xml
-        buttonStart = (Button) findViewById(R.id.buttonStart);
-        buttonStop = (Button) findViewById(R.id.buttonStop);
-
-        //attaching onclicklistener to buttons
+        buttonStart = findViewById(R.id.buttonStart);
+        buttonStop = findViewById(R.id.buttonStop);
         buttonStart.setOnClickListener(this);
         buttonStop.setOnClickListener(this);
     }
@@ -30,13 +26,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == buttonStart) {
-            Toast.makeText(getApplicationContext(), "Service Start", Toast.LENGTH_LONG).show();
-            //start the service here
+            Toast.makeText(getApplicationContext(), "Service Started", Toast.LENGTH_LONG).show();
+            // Start the service here
             startService(new Intent(this, AmodService.class));
         } else if (view == buttonStop) {
-            //stop the service here
+            // Stop the service here
             stopService(new Intent(this, AmodService.class));
-            Toast.makeText(getApplicationContext(), "Service Stop", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Service Stoped", Toast.LENGTH_LONG).show();
         }
     }
 }

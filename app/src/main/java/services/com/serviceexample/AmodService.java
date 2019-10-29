@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 
-public class AmodService extends Service {
+public class MyService extends Service {
     //creating a mediaplayer object
     private MediaPlayer player;
 
@@ -22,16 +22,11 @@ public class AmodService extends Service {
         //getting systems default ringtone
         player = MediaPlayer.create(this,
                 Settings.System.DEFAULT_RINGTONE_URI);
-
         player.setLooping(true);
-
         //staring the player
         player.start();
-
-
         return START_STICKY;
     }
-
 
     @Override
     public void onDestroy() {

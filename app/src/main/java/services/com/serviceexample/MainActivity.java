@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == buttonStart) {
             Toast.makeText(getApplicationContext(), "Service Start", Toast.LENGTH_LONG).show();
             //start the service here
-            startService(new Intent(this, AmodService.class));
+            startService(new Intent(this, MyService.class));
         } else if (view == buttonStop) {
             //stop the service here
-            stopService(new Intent(this, AmodService.class));
+            stopService(new Intent(this, MyService.class));
             Toast.makeText(getApplicationContext(), "Service Stop", Toast.LENGTH_LONG).show();
         }
     }
